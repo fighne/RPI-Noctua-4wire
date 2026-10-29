@@ -1,0 +1,14 @@
+[Unit]
+Description=Noctua NF-A4x105v PWM Fan Controller
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /usr/local/bin/fan_control.py
+Restart=always
+RestartSec=5
+User=root
+
+[Install]
+WantedBy=multi-user.target
